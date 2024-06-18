@@ -1,0 +1,16 @@
+plugin.tx_pool {
+    view {
+        layoutRootPaths {
+
+        }
+        partialRootPaths {
+
+        }
+        templateRootPaths {
+            0 = EXT:pool/Resources/Private/Templates/
+        }
+    }
+    settings {
+        detailPage = {$plugin.tx_pool.settings.singleViewPageUid}
+    }
+}

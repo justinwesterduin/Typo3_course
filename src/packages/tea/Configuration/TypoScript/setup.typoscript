@@ -1,0 +1,25 @@
+plugin.tx_tea {
+    view {
+        layoutRootPaths {
+
+        }
+        partialRootPaths {
+
+        }
+        templateRootPaths {
+            0 = EXT:tea/Resources/Private/Templates/
+        }
+    }
+    settings {
+        detailPage = {$plugin.tx_tea.settings.singleViewPageUid}
+    }
+}
+
+templates.typo3/cms-dashboard.110 = maxserv/tea:Resources/Private/Templates
+
+config.pageTitleProvider {
+    tea {
+        provider = TTN\Tea\PageTitle\TeaPageTitleProvider
+        before = seo
+    }
+}

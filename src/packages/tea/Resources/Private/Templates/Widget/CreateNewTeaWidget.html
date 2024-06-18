@@ -1,0 +1,22 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:dashboard="http://typo3.org/ns/TYPO3/CMS/Dashboard/ViewHelpers"
+      xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+<f:layout name="Widget/Widget"/>
+<f:section name="main">
+
+    <f:if condition="if ( isset($_GET['success']) && $_GET['success'] == 1 )">
+        <f:flashMessages queueIdentifier="FlashMessageQueue::NOTIFICATION_QUEUE"/>
+    </f:if>
+
+        <form action="{be:moduleLink(route:'teaClick')}" method="POST" id="creatTeaForm">
+            <input aria-label="title" type="text" name="title" placeholder="Give name of tea to create" class="w-100 pt-2 pb-2 text-center">
+        </form>
+
+</f:section>
+<f:section name="footer">
+
+    <button type="submit" form="creatTeaForm" class="widget-cta w-100">{f:translate(id: button.title, default: button.title)}</button>
+
+</f:section>
+</html>

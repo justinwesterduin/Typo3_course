@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="EXT:my_sitepackage/Resources/Private/Language/locallang.xlf" date="2024-03-06UTC15:53:530" product-name="my_sitepackage">
+        <body>
+            <trans-unit id="test.custom_content_element.title" resname="test.custom_content_element.title">
+                <source>Custom Contact Element</source>
+            </trans-unit>
+            <trans-unit id="test.custom_content_element.label" resname="test.custom_content_element.label">
+            	<source>Contact</source>
+            </trans-unit>
+            <trans-unit id="test.custom_content_element.description" resname="test.custom_content_element.description">
+            	<source>Custom contact element for the individual project of KV24</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

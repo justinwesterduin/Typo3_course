@@ -1,0 +1,19 @@
+plugin.tx_bug {
+    view {
+        templateRootPaths {
+            0 = EXT:bug/Resources/Private/Templates/
+        }
+
+        partialRootPaths {
+
+        }
+
+        layoutRootPaths {
+
+        }
+    }
+
+    settings {
+        singleViewPageUid = {$plugin.tx_bug.settings.singleViewPageUid}
+    }
+}

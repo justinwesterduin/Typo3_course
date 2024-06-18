@@ -1,0 +1,24 @@
+mod.web_layout.BackendLayouts.Contact {
+    title = Contact Layout
+    config {
+        backend_layout {
+            colCount = 3
+            rowCount = 1
+            rows {
+                1 {
+                    columns {
+                        1 {
+                            name = Main content
+                            colspan = 2
+                            colPos = 0
+                        }
+                        2 {
+                            name = Sidebar
+                            colPos = 1
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

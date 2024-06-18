@@ -1,0 +1,28 @@
+mod.wizards.newContentElement.wizardItems {
+    // add the content element to the tab "common"
+    custom {
+        header = Custom elements
+        elements {
+            mysitepackage_newcontentelement {
+                iconIdentifier = mycustomcontacticon
+                title = LLL:EXT:my_sitepackage/Resources/Private/Language/locallang.xlf:test.custom_content_element.title
+                description = LLL:EXT:my_sitepackage/Resources/Private/Language/locallang.xlf:test.custom_content_element.description
+                tt_content_defValues {
+                    CType = mysitepackage_productelement
+                }
+            }
+
+            mysitepackage_productelement {
+                iconIdentifier = content-package
+                title = My product element
+                description = Products
+                tt_content_defValues {
+                    CType = mysitepackage_productelement
+                }
+            }
+        }
+        show := addToList(mysitepackage_newcontentelement, mysitepackage_productelement)
+    }
+}
+
+templates.typo3/cms-dashboard.1644485473 = maxserv/tea:Resources/Private

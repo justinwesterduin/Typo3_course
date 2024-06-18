@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" product-name="pool" date="2024-03-06UTC15:53:530">
+        <body>
+            <trans-unit id="tx_pool_domain_model_game" aproved="yes">
+              <source>Pool Game</source>
+            </trans-unit>
+            <trans-unit id="tx_pool_domain_model_game.date" aproved="yes">
+              <source>Date and Time</source>
+            </trans-unit>
+            <trans-unit id="tx_pool_domain_model_game.player_1" aproved="yes">
+              <source>Player 1</source>
+            </trans-unit>
+            <trans-unit id="tx_pool_domain_model_game.player_2" aproved="yes">
+              <source>Player 2</source>
+            </trans-unit>
+            <trans-unit id="tx_pool_domain_model_game.player_winner" aproved="yes">
+              <source>Winner</source>
+            </trans-unit>
+            <trans-unit id="tx_pool_domain_model_game.access" aproved="yes">
+              <source>Access</source>
+            </trans-unit>
+            <trans-unit id="tx_pool_domain_model_player" aproved="yes">
+              <source>Pool Players</source>
+            </trans-unit>
+            <trans-unit id="tx_pool_domain_model_player.name" aproved="yes">
+              <source>Player Name</source>
+            </trans-unit>
+            <trans-unit id="tx_pool_domain_model_player.email" aproved="yes">
+              <source>Email</source>
+            </trans-unit>
+            <trans-unit id="tx_pool_domain_model_player.game" aproved="yes">
+              <source>Game</source>
+            </trans-unit>
+            <trans-unit id="tx_pool_domain_model_player.tabs.access" aproved="yes">
+              <source>Title</source>
+            </trans-unit>
+            <trans-unit id="tx_pool_domain_model_player.hidden" aproved="yes">
+              <source>Hidden</source>
+            </trans-unit>
+            <trans-unit id="tx_pool_domain_model_player.pallettes.access" aproved="yes">
+              <source>Access</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

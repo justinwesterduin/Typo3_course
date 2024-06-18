@@ -1,0 +1,78 @@
+base: 'http://localhost:8858/'
+languages:
+  -
+    title: Dutch
+    enabled: true
+    languageId: 0
+    base: /
+    locale: nl_NL.UTF-8
+    navigationTitle: Nederlands
+    flag: nl
+    hreflang: ''
+    websiteTitle: 'Individual Typo3 Project'
+  -
+    title: English
+    enabled: true
+    languageId: 1
+    base: /en/
+    locale: en_US.UTF-8
+    navigationTitle: English
+    flag: en-us-gb
+    hreflang: ''
+    websiteTitle: 'Individual Typo3 Project'
+    fallbackType: strict
+    fallbacks: ''
+rootPageId: 1
+websiteTitle: ''
+
+routeEnhancers:
+  TeaPlugin:
+    type: Extbase
+    extension: tea
+    plugin: TeaIndex
+    routes:
+      - routePath: '/'
+        _controller: 'Tea::index'
+      - routePath: '/{tea_title}'
+        _controller: 'Tea::show'
+        _arguments:
+          tea_title: 'tea'
+    aspects:
+      tea_title:
+        type: PersistedAliasMapper
+        tableName: tx_tea_domain_model_tea
+        routeFieldName: title
+    defaultController: 'Tea::index'
+
+  PoolGamePlugin:
+    type: Extbase
+    extension: pool
+    plugin: GameIndex
+    routes:
+      - routePath: '/'
+        _controller: 'Game::index'
+      - routePath: '/game/{game_date}'
+        _controller: 'Game::show'
+        _arguments:
+          game_date: 'game'
+    aspects:
+      game_date:
+        type: PersistedAliasMapper
+        tableName: tx_pool_domain_model_game
+        routeFieldName: date
+    defaultController: 'Game::index'
+  PoolPlayerPlugin:
+    type: Extbase
+    extension: pool
+    plugin: PlayerShow
+    routes:
+      - routePath: '/player/{player_name}'
+        _controller: 'Player::show'
+        _arguments:
+          player_name: 'player'
+    aspects:
+      player_name:
+        type: PersistedAliasMapper
+        tableName: tx_pool_domain_model_player
+        routeFieldName: name
+    defaultController: 'Game::index'

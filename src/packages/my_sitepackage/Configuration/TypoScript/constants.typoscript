@@ -1,0 +1,19 @@
+######################
+#### DEPENDENCIES ####
+######################
+@import 'EXT:fluid_styled_content/Configuration/TypoScript/constants.typoscript'
+@import 'EXT:powermail/Configuration/TypoScript/Main/constants.typoscript'
+@import 'EXT:powermail/Configuration/TypoScript/Powermail_Frontend/constants.typoscript'
+@import 'EXT:powermail/Configuration/TypoScript/BootstrapClassesAndLayout/constants.typoscript'
+
+######################
+#### Constants ####
+######################
+mysitepackage.settings {
+    # cat=mysitepackage.settings/copyrightYear/10; type=string; label=Which year is it now?
+    copyrightYear = 2024
+}
+
+plugin.tx_powermail.view {
+    templateRootPath = EXT:my_sitepackage/Resources/Private/Templates/Powermail/
+}

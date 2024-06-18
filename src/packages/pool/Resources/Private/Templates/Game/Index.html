@@ -1,0 +1,49 @@
+<html lang="en" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:vtn="MaxServ\Pool\ViewHelpers"
+      data-namespace-typo3-fluid="true">
+<h1>All played games</h1>
+    <vtn:vowelnumber>Hello World</vtn:vowelnumber>
+    <f:variable name="gameCounter">0</f:variable>
+    <table class="table table-info">
+        <thead>
+            <tr>
+                <th scope="col">GameNr.</th>
+                <th scope="col">Date & Time</th>
+                <th scope="col">Player1</th>
+                <th scope="col">Player2</th>
+                <th scope="col">Winner</th>
+                <th scope="col">Details</th>
+            </tr>
+        </thead>
+        <tbody class="table-group-divider">
+        <f:debug>{results}</f:debug>
+            <f:for each="{results}" as="game" iteration="gameCounter">
+                <tr>
+                    <th scope="row">{gameCounter.cycle + numberToStart}</th>
+                    <td>
+                        <f:format.date format="d-m-Y">{game.date}</f:format.date>
+                    </td>
+                    <td>{game.player1.name}</td>
+                    <td>{game.player2.name}</td>
+                    <td>{game.winner.name}</td>
+                    <td>
+                        <f:link.action action="show" pageUid="{settings.detailPage}" arguments="{game: game}">Bekijk
+                        </f:link.action>
+                    </td>
+                </tr>
+            </f:for>
+        </tbody>
+    </table>
+    <p>Game: {pagination.startRecordNumber}-{pagination.endRecordNumber}</p>
+    <div class="pagination">
+        <ul class="d-flex list-unstyled">
+            <f:for each="{pagination.allPageNumbers}" as="page">
+                <li class="page-item">
+                    <f:link.action arguments="{currentPage:page}"
+                                   class="page-link {f:if(condition:'{currentPage}=={page}',then:'active')}">
+                        {page}
+                    </f:link.action>
+                </li>
+            </f:for>
+        </ul>
+    </div>
+</html>

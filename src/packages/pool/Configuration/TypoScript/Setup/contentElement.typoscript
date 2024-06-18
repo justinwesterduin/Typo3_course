@@ -1,0 +1,23 @@
+lib.contentElement {
+    templateRootPaths.100 = EXT:pool/Resources/Private/Templates/ContentElements/
+}
+
+tt_content {
+    pool_poolgameselement =< lib.contentElement
+    pool_poolgameselement {
+        templateName = PoolGamesElement
+        dataProcessing.10 = MaxServ\Pool\DataProcessors\GameDataProcessor
+        dataProcessing.10 {
+            variableName = poolGames
+        }
+    }
+
+    pool_poolplayerselement =< lib.contentElement
+    pool_poolplayerselement {
+        templateName = PoolPlayersElement
+        dataProcessing.20 = MaxServ\Pool\DataProcessors\PlayerDataProcessor
+        dataProcessing.20 {
+            variableName = topThreePlayers
+        }
+    }
+}

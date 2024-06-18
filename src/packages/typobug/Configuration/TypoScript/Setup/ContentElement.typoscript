@@ -1,0 +1,14 @@
+lib.contentElement {
+    templateRootPaths.300 = EXT:bug/Resources/Private/Templates/ContentElements/
+}
+
+tt_content {
+    bug_bugfixelement =< lib.contentElement
+    bug_bugfixelement {
+        templateName = BugFixElement
+        dataProcessing.10 = MaxServ\Bug\DataProcessors\MyBugDataProcessor
+        dataProcessing.10 {
+            variableName = bugs
+        }
+    }
+}

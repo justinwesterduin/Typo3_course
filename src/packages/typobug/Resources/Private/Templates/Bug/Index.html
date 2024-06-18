@@ -1,0 +1,5 @@
+<ul>
+<f:for each="{bugs}" as="bug">
+    <li><f:link.action action="show" arguments="{bug: bug}">{bug.title}</f:link.action></li>
+</f:for>
+</ul>

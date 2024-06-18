@@ -1,0 +1,10 @@
+<html lang="en" xmlns:msp="Maxserv\MySitepackage\ViewHelpers">
+    <h1>{tea.title}</h1>
+    <div><f:link.action action="show" controller="Brand" arguments="{brand: tea.brand}" pageUid="68">{tea.brand.title}</f:link.action></div>
+    <div>
+        <msp:capitalize wordToCapitalize="voorbeeld" value="">{tea.description -> f:format.html()}</msp:capitalize>
+        <f:format.html>{tea.description}</f:format.html>
+        {tea.description -> f:format.html()}
+        <div class="p-2 m-2 text-justify {f:if(condition: tea.description, then: 'foo')}"></div>
+    </div>
+</html>

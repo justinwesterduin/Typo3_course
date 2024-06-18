@@ -1,0 +1,81 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  TTN\Tea\:
+    resource: '../Classes/*'
+    exclude: '../Classes/Domain/Model/*'
+
+  TTN\Tea\EventListener\TeaTimeListener:
+    tags:
+      - name: event.listener
+        identifier: 'teaTimeListener'
+
+  TTN\Tea\PageTitle\TeaPageTitleProvider:
+    public: true
+
+  TTN\Tea\Console\ImportCsvCommand:
+    tags:
+      - name: console.command
+        command: 'typo3:import-csv'
+        description: 'Import Typo3 CSV'
+
+  TTN\Tea\EventListener\ImportCompletedListener:
+    tags:
+      - name: event.listener
+        identifier: 'ImportCompletedListener'
+
+  dashboard.widget.tea.lastTea:
+    class: 'TTN\Tea\Widgets\LatestTeaWidget'
+    arguments:
+      $options:
+        text: 'TEST123'
+        refreshAvailable: true
+    tags:
+      - name: 'dashboard.widget'
+        identifier: 'lastTeaWidget'
+        groupNames: 'documentation'
+        title: 'Last added tea'
+        description: 'This is a widget that shows the last tea that was added to the db'
+        iconIdentifier: 'content-widget-table'
+        height: 'small'
+
+  dashboard.buttons.createTeaButton:
+    class: 'TTN\Tea\Widgets\Provider\CustomButtonProvider'
+    arguments:
+      $title: 'Create'
+      $routeIdentifier: 'tea'
+
+  dashboard.widget.tea.createTea:
+    class: 'TTN\Tea\Widgets\CreateNewTeaWidget'
+    arguments:
+      $buttonProvider: '@dashboard.buttons.createTeaButton'
+      $options:
+        text: 'TEST456'
+        refreshAvailable: true
+    tags:
+      - name: 'dashboard.widget'
+        identifier: 'createTeaWidget'
+        groupNames: 'documentation'
+        title: 'Create new tea'
+        description: 'This is a widget that creates a new tea record based on inputted name'
+        iconIdentifier: 'content-widget-table'
+        height: 'small'
+
+  TTN\Tea\Reaction\CreateNewTeaReaction:
+    public: true
+    tags:
+      - name: reactions.reaction
+
+  TTN\Tea\Controller\BackendController:
+    tags: ['backend.controller']
+
+  TTN\Tea\Message\CreateNewTeaMessage:
+    tags:
+      - name: 'core.webhook_message'
+        identifier: 'tea/button-clicked'
+        description: 'LLL:EXT:tea/Resources/Private/Language/locallang_db.xlf:tea_webhook.webhook_type.tea-button-clicked.description'
+
+

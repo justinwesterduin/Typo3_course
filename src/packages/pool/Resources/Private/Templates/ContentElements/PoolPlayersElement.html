@@ -1,0 +1,29 @@
+<html lang="en" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="d-flex flex-column align-items-end text-center">
+        <h1>Our top 3 players</h1>
+        <table class="table table-success w-75">
+            <thead>
+                <tr>
+                    <th scope="col">Rank</th>
+                    <th scope="col">Player</th>
+                    <th scope="col">Wins</th>
+                </tr>
+            </thead>
+            <tbody>
+                <f:for each="{topThreePlayers}" as="player" iteration="gameCounter">
+                    <tr>
+                        <td>{gameCounter.index +1}</td>
+                        <td>{player.playerName}</td>
+                        <td>{player.wins}</td>
+                    </tr>
+                </f:for>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

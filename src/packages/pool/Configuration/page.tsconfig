@@ -1,0 +1,25 @@
+mod.wizards.newContentElement.wizardItems {
+    // add the content element to the tab "common"
+    custom {
+        header = Custom elements
+        elements {
+            mysitepackage_poolgameselement {
+                iconIdentifier = content-package
+                title = My pool games element
+                description = Pool Games
+                tt_content_defValues {
+                    CType = pool_poolgameselement
+                }
+            }
+            mysitepackage_poolplayerselement {
+                iconIdentifier = content-package
+                title = My pool players element
+                description = Pool Players
+                tt_content_defValues {
+                    CType = pool_poolplayerselement
+                }
+            }
+        }
+        show := addToList(pool_poolgameselement, pool_poolplayerselement)
+    }
+}

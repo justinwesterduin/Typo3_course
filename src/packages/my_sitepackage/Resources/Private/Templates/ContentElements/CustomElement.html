@@ -1,0 +1,24 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default"/>
+<f:section name="Main">
+    <div><f:format.html>{data.bodytext}</f:format.html></div>
+    <div><f:format.raw>{data.companyname}</f:format.raw></div>
+    <div><f:format.raw>{data.address}</f:format.raw></div>
+    <div><f:format.raw>{data.zipcode}</f:format.raw></div>
+    <div><f:format.raw>{data.city}</f:format.raw></div>
+    <div><a href="mailto:{data.email}">{data.email}</a></div>
+    <div><a href="tel:{data.phone}>">{data.phone}</a></div>
+    <div><f:format.raw>{data.extrainfo}</f:format.raw></div>
+    <f:for as="image" each="{images}">
+        <div><f:image image="{image}" width="200"/></div>
+    </f:for>
+    <ul>
+        <f:cObject typoscriptObjectPath="lib.socials" />
+    </ul>
+    drijfhguyhdguhdn
+</f:section>
+</html>
+
+
+
+<!--<h{data.header_layout}>{data.header}</h{data.header_layout}>-->

@@ -1,0 +1,23 @@
+{
+    "name": "maxserv/my-sitepackage",
+    "type": "typo3-cms-extension",
+    "description": "",
+    "version": "1.0.0",
+    "homepage": "https://maxserv.com",
+    "license": ["GPL-2.0-or-later"],
+    "keywords": ["TYPO3 CMS"],
+    "require": {
+        "typo3/cms-core": "^12.4",
+        "typo3/cms-fluid-styled-content": "^12.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Maxserv\\MySitepackage\\": "Classes/"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "my_sitepackage"
+        }
+    }
+}

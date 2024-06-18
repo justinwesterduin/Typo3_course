@@ -1,0 +1,48 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  Maxserv\MySitepackage\:
+    resource: '../Classes/*'
+    exclude: '../Classes/Domain/Model/*'
+
+  Maxserv\MySitepackage\Reaction\ClearCacheReaction:
+    tags:
+      - name: reactions.reaction
+    arguments:
+      $cache: '@cache.runtime'
+    public: true
+
+  Maxserv\MySitepackage\DataProcessors\ProductDataProcessor:
+    public: true
+
+  Maxserv\MySitepackage\Console\ImportRssCommand:
+    tags:
+      - name: console.command
+        command: 'typo3:import-rss'
+        description: 'Import Typo3 RSS'
+
+  dashboard.buttons.exampleButton:
+    class: 'TYPO3\CMS\Dashboard\Widgets\Provider\ButtonProvider'
+    arguments:
+      $title: 'Klik hier!'
+      $link: 'https://maxserv.com'
+      $target: '_blank'
+
+  dashboard.widget.sitepackage.example:
+    class: 'TYPO3\CMS\Dashboard\Widgets\CtaWidget'
+    arguments:
+      $buttonProvider: '@dashboard.buttons.exampleButton'
+      $options:
+        text: 'Dit is een tekst'
+        refreshAvailable: true
+    tags:
+      - name: 'dashboard.widget'
+        identifier: 'exampleWidget'
+        groupNames: 'documentation'
+        title: 'Example widget'
+        description: 'This is an example widget to demonstrate the TCA widget'
+        iconIdentifier: 'content-widget-text'
+        height: 'small'

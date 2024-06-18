@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="EXT:my_sitepackage/Resources/Private/Language/locallang.xlf" date="2024-03-06UTC15:53:530" product-name="my_sitepackage">
+        <body>
+            body<trans-unit id="general" resname="custom.general">
+                <source>General</source>
+            </trans-unit>
+            <trans-unit id="contact" resname="custom.contact">
+            	<source>Contact</source>
+            </trans-unit>
+            <trans-unit id="address" resname="custom.address">
+            	<source>Address</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

@@ -1,0 +1,94 @@
+<html lang="en" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<div>
+    <canvas id="myChart"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <h1>Player details</h1>
+    <div>
+        <hr>
+        <br>
+    </div>
+    <div class="d-flex gap-5">
+        <div class="col-8">
+            <table class="table table-warning mt-5 text-center">
+                <thead>
+                <tr>
+                    <th class="col-3">Date</th>
+                    <th class="col-6"><h3></h3></th>
+                    <th class="col-3">Opponent</th>
+                </tr>
+                </thead>
+                <tbody>
+                <f:for each="{games}" as="game">
+                    <tr>
+                        <td class="col-4">
+                            <f:format.date format="d-m-Y">{game.date}</f:format.date>
+                        </td>
+                        <td class="col-4">
+                            VS
+                        </td>
+                        <td class="col-4">
+                            {game.player2.name}
+                        </td>
+                    </tr>
+                </f:for>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-4">
+            <table class="table table-danger mt-5 text-center">
+                <thead>
+                <tr>
+                    <th class="col-6">Date</th>
+                    <th class="col-6">Games</th>
+                </tr>
+                </thead>
+                <tbody>
+                <script>
+                    let dates = [];
+                    let games = [];
+                </script>
+                <f:for each="{playedGames}" as="play">
+                    <script>
+                        dates.push(JSON.parse('<f:format.raw>{play.d -> f:format.json()}</f:format.raw>'));
+                        games.push(JSON.parse('<f:format.raw>{play.games}</f:format.raw>'));
+                    </script>
+                    <tr>
+                        <td><f:format.raw>{play.d}</f:format.raw></td>
+                        <td><f:format.raw>{play.games}</f:format.raw></td>
+                    </tr>
+                </f:for>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+<script>
+    const ctx = document.getElementById('myChart');
+
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: dates
+            ,
+            datasets: [{
+                label: 'Games played',
+                data: games
+                ,
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    max: 10,
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
+</html>

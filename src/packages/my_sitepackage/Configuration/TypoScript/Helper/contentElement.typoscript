@@ -1,0 +1,58 @@
+lib.contentElement {
+    templateRootPaths.1000 = EXT:my_sitepackage/Resources/Private/Templates/ContentElements/
+    layoutRootPaths.1000 = EXT:my_sitepackage/Resources/Private/Layouts/ContentElements/
+    partialRootPaths.1000 = EXT:my_sitepackage/Resources/Private/Partials/ContentElements/
+}
+
+tt_content {
+    mysitepackage_newcontentelement =< lib.contentElement
+    mysitepackage_newcontentelement {
+        templateName = CustomElement
+
+        dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+        dataProcessing.10 {
+            references.fieldName = image
+            references.table = tt_content
+            as = images
+        }
+    }
+
+    mysitepackage_productelement =< lib.contentElement
+    mysitepackage_productelement {
+        templateName = ProductElement
+        dataProcessing.30 = Maxserv\MySitepackage\DataProcessors\ProductDataProcessor
+        dataProcessing.30 {
+            variableName = product
+        }
+    }
+
+    mysitepackage_poolgameselement =< lib.contentElement
+    mysitepackage_poolgameselement {
+        templateName = PoolGamesElement
+        dataProcessing.40 = Maxserv\Pool\DataProcessors\GameDataProcessor
+        dataProcessing.40 {
+            variableName = lastFive
+        }
+    }
+}
+
+lib.socials = CONTENT
+lib.socials {
+    table = tx_mysitepackage_customcontact_socials
+    select {
+        orderBy = uid
+    }
+    renderObj = COA
+    renderObj {
+        10 = TEXT
+        10 {
+            field = socials_link
+            wrap = <li><a href="|" target="_blank" class="text-blue-500 hover:text-blue-700"
+        }
+        20 = TEXT
+        20 {
+            field = socials_name
+            wrap = >|</a></li>
+        }
+    }
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="EXT:my_sitepackage/Resources/Private/Language/be_users.xlf" product-name="my_sitepackage" date="2024-03-07UTC16:16:220">
+        <body>
+            <trans-unit id="field.email2.label">
+                <source>Test Email2</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

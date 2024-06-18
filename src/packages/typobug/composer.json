@@ -1,0 +1,32 @@
+{
+  "name": "maxserv/typobug",
+  "version": "1.0.0",
+  "type": "typo3-cms-extension",
+  "description": "It's not a bug, it's a feature!",
+  "authors": [
+    {
+      "name": "MaxServ",
+      "role": "Developer",
+      "homepage": "https://www.maxserv.com"
+    }
+
+  ],
+  "require": {
+    "typo3/cms-core": "^12.0.0",
+    "typo3/cms-extbase": "^12.0.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "MaxServ\\Bug\\": "Classes/"
+    }
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "bug"
+    },
+    "branch-alias": {
+      "dev-master": "12.0.x-dev"
+    }
+  }
+}
+

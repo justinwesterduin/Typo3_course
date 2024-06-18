@@ -1,0 +1,10 @@
+<html lang="en" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <table>
+        <f:for each="{teas}" as="tea">
+            <tr>
+                <td><f:link.action action="show" pageUid="{settings.detailPage}" arguments="{tea: tea}">{tea.title}</f:link.action></td>
+                <td>{tea.brand.title}</td>
+            </tr>
+        </f:for>
+    </table>
+</html>

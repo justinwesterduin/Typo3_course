@@ -1,0 +1,12 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  MaxServ\Bug\:
+    resource: '../Classes/*'
+    exclude: '../Classes/Domain/Model/*'
+
+  MaxServ\Bug\DataProcessors\MyBugDataProcessor:
+    public: true

@@ -1,0 +1,17 @@
+mod.wizards.newContentElement.wizardItems {
+    // add the content element to the tab "common"
+    custom {
+        header = Custom elements
+        elements {
+            bug_bugfixelement {
+                iconIdentifier = content-package
+                title = My bug fix element
+                description = Bugsss
+                tt_content_defValues {
+                    CType = bug_bugfixelement
+                }
+            }
+        }
+        show := addToList(bug_bugfixelement)
+    }
+}

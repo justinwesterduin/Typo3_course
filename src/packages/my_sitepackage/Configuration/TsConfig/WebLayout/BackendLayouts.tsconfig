@@ -1,0 +1,4 @@
+#
+# BACKENDLAYOUTS
+#
+@import 'EXT:my_sitepackage/Configuration/TsConfig/WebLayout/BackendLayouts'

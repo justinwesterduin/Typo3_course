@@ -1,0 +1,90 @@
+page = PAGE
+page {
+    typeNum = 0
+
+    1 = FLUIDTEMPLATE
+    1 {
+        file.stdWrap.cObject = CASE
+        file.stdWrap.cObject {
+            key.data = pagelayout
+
+            default = TEXT
+            default.value = EXT:my_sitepackage/Resources/Private/Templates/Page/Default.html
+
+            pagets__Contact = TEXT
+            pagets__Contact.value = EXT:my_sitepackage/Resources/Private/Templates/Page/Contact.html
+        }
+
+        variables {
+            copyrightYear = TEXT
+            copyrightYear.value = {$mysitepackage.settings.copyrightYear}
+        }
+
+        layoutRootPaths {
+            0 = EXT:my_sitepackage/Resources/Private/Layouts/Page/
+        }
+        partialRootPaths {
+            0 = EXT:my_sitepackage/Resources/Private/Partials/Page/
+        }
+        templateRootPaths {
+            0 = EXT:my_sitepackage/Resources/Private/Templates/Page/
+        }
+
+        dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+            10 {
+                references.fieldName = media
+            }
+            20 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            20 {
+                levels = 1
+#                excludeUidList = 68
+                includeSpacer = 1
+                as = headerMenu
+            }
+        }
+    }
+    includeCSSLibs {
+        bootstrap = EXT:my_sitepackage/Resources/Public/Css/bootstrap.min.css
+    }
+
+    includeJSLibs {
+        bootstrap = EXT:my_sitepackage/Resources/Public/JavaScript/bootstrap.bundle.min.js
+        chartjs = EXT:my_sitepackage/Resources/Public/JavaScript/chart.umd.js
+    }
+    includeCSS {
+        main-style = EXT:my_sitepackage/Resources/Public/Css/styles.css
+    }
+
+    includeJS {
+        main-js = EXT:my_sitepackage/Resources/Public/JavaScript/main.js
+    }
+}
+
+[date("w") == 7]
+    page.1.variables.greet = TEXT
+    page.1.variables.greet.value = Vandaag zijn we er even niet...
+[end]
+
+[date('G') > 0 && date('G') <= 11]
+    page.1.variables.time = TEXT
+    page.1.variables.time.value = Goede morgen
+[end]
+[date('G') > 11 && date('G') <= 19]
+    page.1.variables.time = TEXT
+    page.1.variables.time.value = Goede middag
+[end]
+[date('G') > 19 && date('G') <= 23]
+    page.1.variables.time = TEXT
+    page.1.variables.time.value = Goede avond
+[end]
+
+#Wordt niet vertaald naar nl_NL
+page.1.variables.date = TEXT
+page.1.variables.date {
+    formattedDate = LONGDATE
+#    formatedDate.locale = nl_NL
+}
+
+
+

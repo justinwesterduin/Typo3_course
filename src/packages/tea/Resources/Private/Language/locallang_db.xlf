@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" product-name="tea" date="2024-03-06UTC15:53:530">
+        <body>
+            <trans-unit id="tx_tea_domain_model_tea" aproved="yes">
+              <source>Tea</source>
+            </trans-unit>
+            <trans-unit id="tx_tea_domain_model_tea.id" aproved="yes">
+              <source>Id</source>
+            </trans-unit>
+            <trans-unit id="tx_tea_domain_model_tea.title" aproved="yes">
+              <source>Title</source>
+            </trans-unit>
+            <trans-unit id="tx_tea_domain_model_tea.description" aproved="yes">
+              <source>Description</source>
+            </trans-unit>
+            <trans-unit id="tx_tea_domain_model_tea.access" aproved="yes">
+              <source>Access</source>
+            </trans-unit>
+            <trans-unit id="tx_tea_domain_model_brand" aproved="yes">
+              <source>Tea Brand</source>
+            </trans-unit>
+            <trans-unit id="tx_tea_domain_model_brand.title" aproved="yes">
+              <source>Tea Brand</source>
+            </trans-unit>
+            <trans-unit id="tx_tea_domain_model_brand.tabs.access" aproved="yes">
+              <source>Title</source>
+            </trans-unit>
+            <trans-unit id="tx_tea_domain_model_brand.hidden" aproved="yes">
+              <source>Hidden</source>
+            </trans-unit>
+            <trans-unit id="tx_tea_domain_model_brand.pallettes.access" aproved="yes">
+              <source>Access</source>
+            </trans-unit>
+            <trans-unit id="tea_webhook.webhook_type.tea-button-clicked.description" aproved="yes">
+              <source>... when the widget button is clicked</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

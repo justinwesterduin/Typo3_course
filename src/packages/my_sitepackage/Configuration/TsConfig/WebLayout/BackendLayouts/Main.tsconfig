@@ -1,0 +1,26 @@
+mod.web_layout.BackendLayouts.Main {
+    title = Main Layout
+    config {
+        backend_layout {
+            colCount = 3
+            rowCount = 1
+            rows {
+                1 {
+                    columns {
+                        1 {
+                            name = Left
+                            colspan = 2
+                            colPos = 0
+                        }
+                        2 {
+                            name = Right
+                            colPos = 1
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+

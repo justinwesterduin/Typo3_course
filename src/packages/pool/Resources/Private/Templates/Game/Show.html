@@ -1,0 +1,48 @@
+<html lang="en" xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <h1><f:format.date format="d-m-Y">{game.date}</f:format.date></h1>
+
+    <div><span class="fw-bold">Time: </span><span class="fst-italic"><f:format.date format="H:i:s">{game.date}</f:format.date></span></div>
+
+    <div class="d-flex flex-row justify-content-between">
+        <div class="col-8">
+            <table class="table table-warning mt-5 text-center">
+                <thead>
+                <tr>
+                    <th class="col-3"></th>
+                    <th class="col-6"><h3>Game</h3></th>
+                    <th class="col-3"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="col-4">
+                        <f:link.action action="show" controller="Player" arguments="{player: game.player1}" pageUid="71">{game.player1.name}</f:link.action>
+                    </td>
+                    <td class="col-4">
+                        VS
+                    </td>
+                    <td class="col-4">
+                        <f:link.action action="show" controller="Player" arguments="{player: game.player2}" pageUid="71">{game.player2.name}</f:link.action>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-4">
+            <table class="table table-warning mt-5 text-center">
+                <thead>
+                <tr>
+                    <th class="col-12"><h3>Winner</h3></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="col-12">
+                        <f:link.action action="show" controller="Player" arguments="{player: game.winner}" pageUid="71">{game.winner.name}</f:link.action>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</html>
